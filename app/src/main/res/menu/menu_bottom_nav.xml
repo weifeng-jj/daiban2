@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_alarm"
+        android:title="闹钟"
+        android:icon="@android:drawable/ic_lock_idle_alarm" />
+    <item
+        android:id="@+id/nav_todo"
+        android:title="待办"
+        android:icon="@android:drawable/ic_menu_agenda" />
+    <item
+        android:id="@+id/nav_stopwatch"
+        android:title="秒表"
+        android:icon="@android:drawable/ic_media_play" />
+    <item
+        android:id="@+id/nav_timer"
+        android:title="计时器"
+        android:icon="@android:drawable/ic_menu_recent_history" />
+</menu>
+
+
+
+
+

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <!-- 左上角地区选择器 -->
+        <TextView
+            android:id="@+id/tvWeatherLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="天气"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:drawableEnd="@android:drawable/arrow_down_float"
+            android:drawablePadding="4dp"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:layout_marginBottom="6dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/card"
+            android:layout_marginBottom="16dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:padding="16dp">
+
+                <com.example.reverseclock.TickingClockView
+                    android:id="@+id/clockView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/card"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已设置的闹钟"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary"
+                    android:textSize="18sp"/>
+
+                <LinearLayout
+                    android:id="@+id/llAlarmListHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="12dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:id="@+id/btnCreateAlarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="创建闹钟"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/secondary"
+            android:textColor="@color/white"
+            android:padding="14dp"/>
+
+    </LinearLayout>
+</ScrollView>
+
+
+
+
+

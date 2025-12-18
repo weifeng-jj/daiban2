@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="task_list">
+        <item>数学题（自定义题数）</item>
+        <item>摇晃手机（自定义次数）</item>
+        <item>滑动拼图（3×3 或 4×4）</item>
+    </string-array>
+
+    <string-array name="alert_mode_list">
+        <item>仅响铃</item>
+        <item>仅震动</item>
+        <item>响铃+震动</item>
+    </string-array>
+
+    <string-array name="repeat_mode_list">
+        <item>仅一次</item>
+        <item>每天</item>
+        <item>工作日（周一至周五）</item>
+        <item>自定义重复</item>
+    </string-array>
+
+    <string-array name="puzzle_mode_list">
+        <item>3 × 3 拼图</item>
+        <item>4 × 4 拼图</item>
+    </string-array>
+</resources>

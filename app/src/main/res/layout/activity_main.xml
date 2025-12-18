@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <!-- 时间卡片 -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            app:cardBackgroundColor="@color/card"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="18dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="选择闹钟时间"
+                    android:textSize="18sp"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvSelectedTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="未选择时间"
+                    android:textSize="16sp"
+                    android:textColor="@color/gray"
+                    android:layout_marginTop="8dp"/>
+
+                <Button
+                    android:id="@+id/btnSelectTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="打开时间选择器"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="12dp"
+                    android:backgroundTint="@color/primary"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 任务卡片 -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            app:cardBackgroundColor="@color/card"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="18dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="选择关闹钟方式"
+                    android:textSize="18sp"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"/>
+
+                <Spinner
+                    android:id="@+id/spinnerTask"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/tvTaskDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="完成任务才能关闭闹钟"
+                    android:textColor="@color/gray"
+                    android:textSize="15sp"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- 摇晃次数自定义（仅选择摇晃时显示） -->
+                <LinearLayout
+                    android:id="@+id/llShakeCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="摇晃次数"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"/>
+
+                    <EditText
+                        android:id="@+id/etShakeCount"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="10"
+                        android:text="10"
+                        android:layout_marginLeft="12dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="次"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="6dp"/>
+                </LinearLayout>
+
+                <!-- 数学题数量（仅选择数学题时显示） -->
+                <LinearLayout
+                    android:id="@+id/llMathConfig"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="需要答对题数"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"/>
+
+                    <EditText
+                        android:id="@+id/etMathCount"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="5"
+                        android:text="5"
+                        android:layout_marginLeft="12dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="道"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="6dp"/>
+                </LinearLayout>
+
+                <!-- 拼图规模（仅选择拼图时显示） -->
+                <LinearLayout
+                    android:id="@+id/llPuzzleConfig"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="拼图规模"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"/>
+
+                    <Spinner
+                        android:id="@+id/spinnerPuzzleMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 提醒方式 & 重复 -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            app:cardBackgroundColor="@color/card"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="18dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="提醒方式"
+                    android:textSize="18sp"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"/>
+
+                <Spinner
+                    android:id="@+id/spinnerAlertMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="重复规则"
+                    android:textSize="18sp"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"/>
+
+                <Spinner
+                    android:id="@+id/spinnerRepeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- 自定义重复周几 -->
+                <LinearLayout
+                    android:id="@+id/llCustomRepeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/cbSun"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="日"/>
+                    <CheckBox
+                        android:id="@+id/cbMon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="一"/>
+                    <CheckBox
+                        android:id="@+id/cbTue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="二"/>
+                    <CheckBox
+                        android:id="@+id/cbWed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="三"/>
+                    <CheckBox
+                        android:id="@+id/cbThu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="四"/>
+                    <CheckBox
+                        android:id="@+id/cbFri"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="五"/>
+                    <CheckBox
+                        android:id="@+id/cbSat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="六"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 小贴士卡片 -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/card"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="小贴士"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="• 闹钟会在下一次触发时间响起\n• 任务完成后才能关闭铃声\n• 摇晃次数可自定义"
+                    android:textSize="14sp"
+                    android:textColor="@color/gray"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 设置 / 保存闹钟按钮 -->
+        <Button
+            android:id="@+id/btnSetAlarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="设置闹钟"
+            android:backgroundTint="@color/secondary"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_marginTop="18dp"
+            android:padding="12dp"/>
+
+        <!-- 编辑模式下的删除按钮（滑到底部可见） -->
+        <Button
+            android:id="@+id/btnDeleteCurrentAlarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="删除这个闹钟"
+            android:backgroundTint="@color/red"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="16dp"
+            android:padding="10dp"
+            android:visibility="gone"/>
+
+        <!-- 已设置闹钟列表 -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/card"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已设置的闹钟"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary"/>
+
+                <LinearLayout
+                    android:id="@+id/llAlarmList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="12dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>
