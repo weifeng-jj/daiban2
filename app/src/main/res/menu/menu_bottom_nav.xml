@@ -9,16 +9,11 @@
         android:title="待办"
         android:icon="@android:drawable/ic_menu_agenda" />
     <item
-        android:id="@+id/nav_stopwatch"
-        android:title="秒表"
+        android:id="@+id/nav_timetool"
+        android:title="计时工具"
         android:icon="@android:drawable/ic_media_play" />
     <item
-        android:id="@+id/nav_timer"
-        android:title="计时器"
-        android:icon="@android:drawable/ic_menu_recent_history" />
+        android:id="@+id/nav_countdown"
+        android:title="倒数日"
+        android:icon="@android:drawable/ic_menu_my_calendar" />
 </menu>
-
-
-
-
-

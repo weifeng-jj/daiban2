@@ -22,10 +22,12 @@ public class MainNavActivity extends AppCompatActivity {
                 fragment = new AlarmFragment();
             } else if (id == R.id.nav_todo) {
                 fragment = new TodoFragment();
-            } else if (id == R.id.nav_stopwatch) {
-                fragment = new StopwatchFragment();
-            } else if (id == R.id.nav_timer) {
-                fragment = new TimerFragment();
+            } else if (id == R.id.nav_timetool) {
+                // 合并后的计时工具（秒表 + 计时器）
+                fragment = new TimeToolFragment();
+            } else if (id == R.id.nav_countdown) {
+                // 倒数日功能
+                fragment = new CountdownFragment();
             } else {
                 fragment = new AlarmFragment();
             }
@@ -41,8 +43,3 @@ public class MainNavActivity extends AppCompatActivity {
         }
     }
 }
-
-
-
-
-
